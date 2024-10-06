@@ -3,11 +3,12 @@ package main
 import (
 	"strconv"
 	"time"
+        "os"
 )
 
 func main() {
 	density := 3
-	mem := New("1995-12-29", "80")
+	mem := New(os.Args[1], os.Args[2])
 	elapsed := mem.CalcElapsedWeeks(time.Now())
         lines := mem.Expectation / density
         items := 52 *  density
