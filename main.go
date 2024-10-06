@@ -25,6 +25,7 @@ func main() {
 				print("\u25A1")
 			}
 		}
+                print(" ", (i +1)*density)
 		println()
 	}
 }
