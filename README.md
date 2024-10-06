@@ -2,7 +2,7 @@
 A command-line tool written in Go that generates a calendar to remind users of the inevitability of death. 
 
 ```bash
-$ mementomori 1995-12-29 80
+$ memento-mori 1995-12-29 80
 
 MEMEMENTO MORI 💀
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 2
