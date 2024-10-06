@@ -1,23 +1,28 @@
 package main
 
 import (
+	"os"
 	"strconv"
 	"time"
-        "os"
 )
 
 func main() {
-	density := 3
+	var density int
+	if len(os.Args) == 4 {
+		density = parseInt(os.Args[3])
+	} else {
+		density = 3
+	}
 	mem := New(os.Args[1], os.Args[2])
 	elapsed := mem.CalcElapsedWeeks(time.Now())
-        lines := mem.Expectation / density
-        items := 52 *  density
+	lines := mem.Expectation / density
+	items := 52 * density
 
-        println("MEMEMENTO MORI 💀")
+	println("MEMEMENTO MORI 💀")
 
-	for i := 0; i < lines ; i++ {
+	for i := 0; i < lines; i++ {
 		for j := 0; j < items; j++ {
-                        item := i*items+j
+			item := i*items + j
 			if item <= elapsed {
 				print("\u25A0")
 			} else {
@@ -25,7 +30,7 @@ func main() {
 				print("\u25A1")
 			}
 		}
-                print(" ", (i +1)*density)
+		print(" ", (i+1)*density)
 		println()
 	}
 }
@@ -38,11 +43,11 @@ type MementoMori struct {
 func New(birth, expectation string) *MementoMori {
 	return &MementoMori{
 		Birth:       parseBirth(birth),
-		Expectation: parseExpecation(expectation),
+		Expectation: parseInt(expectation),
 	}
 }
 
-func parseExpecation(e string) int {
+func parseInt(e string) int {
 	res, err := strconv.Atoi(e)
 	if err != nil {
 		panic(err)
