@@ -19,10 +19,10 @@ func main() {
 		for j := 0; j < items; j++ {
                         item := i*items+j
 			if item <= elapsed {
-				print("✅")
+				print("\u25A0")
 			} else {
 
-				print("☑️")
+				print("\u25A1")
 			}
 		}
 		println()
